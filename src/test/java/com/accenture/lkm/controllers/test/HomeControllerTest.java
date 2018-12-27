@@ -7,38 +7,38 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.accenture.lkm.controllers.HomeController;
+import com.accenture.lkm.controllers.Controller;
 
-public class HomeControllerTest {
+public class ControllerTest {
 
-	private static HomeController hc = null;
+	private static Controller hc = null;
 	
 	
 	@BeforeClass
 	public static void setUp() {
-		hc = new HomeController(); 
+		hc = new Controller(); 
 	} 
 	
 	@Test 
-	public void testHome() {
-		HomeController hc = new HomeController();
-		ModelAndView mv = hc.home();
+	public void test() {
+		Controller hc = new Controller();
+		ModelAndView mv = hc.();
 		assertEquals("View name does not match!", "index", mv.getViewName());
 	}
 
 	
 	@Test 
-	public void testHomeTitle() {
-		HomeController hc = new HomeController();
-		ModelAndView mv = hc.home();
-		assertEquals("Title Missing!", "Accenture - High performance. Delivered" , mv.getModelMap().get("title"));
+	public void testTitle() {
+		Controller hc = new Controller();
+		ModelAndView mv = hc.();
+		assertEquals("Title Missing!", "Accenture" , mv.getModelMap().get("title"));
 	}
 
 	
 	@Test 
-	public void testHomeGreeting() {
-		HomeController hc = new HomeController();
-		ModelAndView mv = hc.home();
+	public void testGreeting() {
+		Controller hc = new Controller();
+		ModelAndView mv = hc.();
 		assertEquals("Greeting Missing!", "Welcome to Orchestrating with Jenkins Training!" , mv.getModelMap().get("greeting"));
 	}
 	
